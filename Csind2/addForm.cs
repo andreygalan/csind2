@@ -99,6 +99,120 @@ namespace Csind2
 
             db.closeConnection();
         }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Clear();
+            comboBox2.Items.Clear();
+            comboBox3.Items.Clear();
+            comboBox4.Items.Clear();
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `week` WHERE 1", db.getConnection());
+            db.openConnection();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                comboBox4.Items.Add(reader[1]);
+
+            }
+            db.closeConnection();
+
+            command = new MySqlCommand("SELECT * FROM `teacher` WHERE 1", db.getConnection());
+            db.openConnection();
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                comboBox2.Items.Add(reader[1].ToString()+" "+reader[2].ToString()+" "+reader[3].ToString());
+            }
+            db.closeConnection();
+
+            command = new MySqlCommand("SELECT * FROM `subject` WHERE 1", db.getConnection());
+
+            db.openConnection();
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                comboBox3.Items.Add(reader[1]);
+            }
+            db.closeConnection();
+            command = new MySqlCommand("SELECT * FROM `group` WHERE 1", db.getConnection());
+
+            db.openConnection();
+            reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                comboBox1.Items.Add(reader[1]);
+            }
+            db.closeConnection();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string gr = comboBox1.Text;
+            string id;
+            string tch = comboBox2.Text;
+            string day = comboBox4.Text;
+            string subj = comboBox3.Text;
+
+            DB db = new DB();
+            MySqlCommand command = new MySqlCommand("SELECT `id` FROM `week` WHERE `day`='" + day+"'", db.getConnection());
+            db.openConnection();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                day = reader[0].ToString();
+            }
+            db.closeConnection();
+
+            command = new MySqlCommand("SELECT `id` FROM `group` WHERE `numgr`=" + gr, db.getConnection());
+            db.openConnection();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                gr = reader[0].ToString();
+            }
+            db.closeConnection();
+            command = new MySqlCommand("SELECT `id` FROM `subject` WHERE `subj`='" + subj+"'", db.getConnection());
+            db.openConnection();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                subj = reader[0].ToString();
+            }
+            db.closeConnection();
+            string[] name = tch.Split(new char[] { ' ' });
+            string ln = name[0];
+            string fn = name[1];
+            string mn = name[2];
+            command = new MySqlCommand("SELECT `id` FROM `teacher` WHERE `last names`='" + ln+ "' AND `first name`='"+fn+ "' AND `middle names`='"+mn+"'", db.getConnection());
+            db.openConnection();
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                tch = reader[0].ToString();
+            }
+            db.closeConnection();
+            command = new MySqlCommand("INSERT INTO `ind2`.`schedule` (`idrg`, `idteach`, `idsubject`,`iday`) VALUES(@irg, @itc, @isb,@iday)", db.getConnection());
+            command.Parameters.Add("@irg", MySqlDbType.Int16).Value = Convert.ToInt16(gr);
+            command.Parameters.Add("@itc", MySqlDbType.Int16).Value = Convert.ToInt16(tch);
+            command.Parameters.Add("@isb", MySqlDbType.Int16).Value = Convert.ToInt16(subj);
+            command.Parameters.Add("@iday", MySqlDbType.Int16).Value = Convert.ToInt16(day);
+
+
+            db.openConnection();
+            if (command.ExecuteNonQuery() == 1)
+                MessageBox.Show("Запись создана");
+            else MessageBox.Show("error");
+
+            db.closeConnection();
+
+
+        }
     }
     
 }

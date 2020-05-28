@@ -35,5 +35,11 @@ namespace Csind2
             delForm newForm = new delForm();
             newForm.Show();
         }
+
+        private void преподавательToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            addForm newForm = new addForm();
+            newForm.Show();
+        }
     }
 }
