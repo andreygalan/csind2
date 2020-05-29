@@ -42,6 +42,7 @@
             this.группаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дисциплинаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.расписаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,7 +86,8 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4});
+            this.Column4,
+            this.Column5});
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -142,27 +144,33 @@
             // преподавательToolStripMenuItem
             // 
             this.преподавательToolStripMenuItem.Name = "преподавательToolStripMenuItem";
-            this.преподавательToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.преподавательToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.преподавательToolStripMenuItem.Text = "Преподаватель";
             this.преподавательToolStripMenuItem.Click += new System.EventHandler(this.преподавательToolStripMenuItem_Click);
             // 
             // группаToolStripMenuItem
             // 
             this.группаToolStripMenuItem.Name = "группаToolStripMenuItem";
-            this.группаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.группаToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.группаToolStripMenuItem.Text = "Группа";
             // 
             // дисциплинаToolStripMenuItem
             // 
             this.дисциплинаToolStripMenuItem.Name = "дисциплинаToolStripMenuItem";
-            this.дисциплинаToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.дисциплинаToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.дисциплинаToolStripMenuItem.Text = "Дисциплина";
             // 
             // расписаниеToolStripMenuItem
             // 
             this.расписаниеToolStripMenuItem.Name = "расписаниеToolStripMenuItem";
-            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.расписаниеToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.расписаниеToolStripMenuItem.Text = "Расписание";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
             // 
             // Form1
             // 
@@ -201,6 +209,7 @@
         private System.Windows.Forms.ToolStripMenuItem группаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem дисциплинаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem расписаниеToolStripMenuItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
 

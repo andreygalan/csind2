@@ -16,6 +16,8 @@ namespace Csind2
         public addForm()
         {
             InitializeComponent();
+
+        
         }
 
         
