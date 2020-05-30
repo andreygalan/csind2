@@ -36,68 +36,58 @@ namespace Csind2
           
 
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `schedule` WHERE 1", db.getConnection());
-            db.openConnection();
-            MySqlDataReader reader = command.ExecuteReader();
-
-            while (reader.Read())
-            {
-                id.Add(reader[0].ToString());
-                idgr.Add(reader[1].ToString());
-                idteach.Add(reader[2].ToString());
-                idsubj.Add(reader[3].ToString());
-                iday.Add(reader[4].ToString());
-            }
-            db.closeConnection();
+           
 
 
-            for (int i = 0; i < id.Count; i++)
-            {
-                command = new MySqlCommand("SELECT `numgr` FROM `group` WHERE `id`='" + idgr[i] + "'", db.getConnection());
-                db.openConnection();
-                reader = command.ExecuteReader();
+            
+                MySqlCommand command = new MySqlCommand("SELECT q.`id`, x.`numgr` , y.`last names` , y.`first name` , y.`middle names` , z.`subj` , w.`day` FROM `schedule` q, `group` x, `teacher` y, `subject` z, `week` w WHERE x.`idgr` = q.`idrg` AND y.`idteach` = q.`idteach` AND z.`idsubject` = q.`idsubject` AND w.`iday` = q.`iday`", db.getConnection());
+                 db.openConnection();
+                MySqlDataReader reader = command.ExecuteReader();
 
                 while (reader.Read())
                 {
                     dataGridView1.Rows.Add();
-                    dataGridView1[0, dataGridView1.Rows.Count - 1].Value = id[i];
-                    dataGridView1[1, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
+                    dataGridView1[0, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
+                    dataGridView1[1, dataGridView1.Rows.Count - 1].Value = reader[1].ToString();
+                    dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                    dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[5].ToString();
+                    dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[6].ToString();
                 }
                 reader.Close();
 
-                command = new MySqlCommand("SELECT `last names` , `first name` , `middle names` FROM `teacher` WHERE `id`='" + idteach[i] + "'", db.getConnection());
+                //    command = new MySqlCommand("SELECT `last names` , `first name` , `middle names` FROM `teacher` WHERE `id`='" + idteach[i] + "'", db.getConnection());
 
-                reader = command.ExecuteReader();
+                //    reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString();
-                }
-                reader.Close();
+                //    while (reader.Read())
+                //    {
+                //        dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString();
+                //    }
+                //    reader.Close();
 
-                command = new MySqlCommand("SELECT `subj` FROM `subject` WHERE `id`='" + idsubj[i] + "'", db.getConnection());
+                //    command = new MySqlCommand("SELECT `subj` FROM `subject` WHERE `id`='" + idsubj[i] + "'", db.getConnection());
 
-                reader = command.ExecuteReader();
+                //    reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
-                }
-                reader.Close();
+                //    while (reader.Read())
+                //    {
+                //        dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
+                //    }
+                //    reader.Close();
 
-                command = new MySqlCommand("SELECT `day` FROM `week` WHERE `id`='" + iday[i] + "'", db.getConnection());
+                //    command = new MySqlCommand("SELECT `day` FROM `week` WHERE `id`='" + iday[i] + "'", db.getConnection());
 
-                reader = command.ExecuteReader();
+                //    reader = command.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
-                }
-                reader.Close();
+                //    while (reader.Read())
+                //    {
+                //        dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
+                //    }
+                //    reader.Close();
 
 
                 db.closeConnection();
-            }
+            
         }
 
         private void add1_Click(object sender, EventArgs e)
