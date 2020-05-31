@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,31 @@ namespace Csind2
         public edForm()
         {
             InitializeComponent();
+        }
+
+        private void edForm_Load(object sender, EventArgs e)
+        {
+            DB db = new DB();
+
+
+
+
+            MySqlCommand command = new MySqlCommand("SELECT q.`id`, x.`numgr` , y.`last names` , y.`first name` , y.`middle names` , z.`subj` , w.`day` FROM `schedule` q, `group` x, `teacher` y, `subject` z, `week` w WHERE x.`idgr` = q.`idrg` AND y.`idteach` = q.`idteach` AND z.`idsubject` = q.`idsubject` AND w.`iday` = q.`iday`", db.getConnection());
+            db.openConnection();
+            MySqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1[0, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
+                dataGridView1[1, dataGridView1.Rows.Count - 1].Value = reader[1].ToString();
+                dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
+                dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[5].ToString();
+                dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[6].ToString();
+            }
+            reader.Close();
+            db.closeConnection();
+
         }
     }
 }

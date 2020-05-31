@@ -26,3 +26,5 @@ F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.csproj.CopyComplete
 F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.exe
 F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.pdb
 F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.addForm.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.delForm.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.edForm.resources
