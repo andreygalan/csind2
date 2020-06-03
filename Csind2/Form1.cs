@@ -53,39 +53,7 @@ namespace Csind2
                     dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[5].ToString();
                     dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[6].ToString();
                 }
-                reader.Close();
-
-                //    command = new MySqlCommand("SELECT `last names` , `first name` , `middle names` FROM `teacher` WHERE `id`='" + idteach[i] + "'", db.getConnection());
-
-                //    reader = command.ExecuteReader();
-
-                //    while (reader.Read())
-                //    {
-                //        dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[0].ToString() + " " + reader[1].ToString() + " " + reader[2].ToString();
-                //    }
-                //    reader.Close();
-
-                //    command = new MySqlCommand("SELECT `subj` FROM `subject` WHERE `id`='" + idsubj[i] + "'", db.getConnection());
-
-                //    reader = command.ExecuteReader();
-
-                //    while (reader.Read())
-                //    {
-                //        dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
-                //    }
-                //    reader.Close();
-
-                //    command = new MySqlCommand("SELECT `day` FROM `week` WHERE `id`='" + iday[i] + "'", db.getConnection());
-
-                //    reader = command.ExecuteReader();
-
-                //    while (reader.Read())
-                //    {
-                //        dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
-                //    }
-                //    reader.Close();
-
-
+                reader.Close();            
                 db.closeConnection();
             
         }
