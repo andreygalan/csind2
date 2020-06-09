@@ -75,8 +75,44 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="group.Designer.cs">
+      <DependentUpon>group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="pers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pers.Designer.cs">
+      <DependentUpon>pers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rasp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rasp.Designer.cs">
+      <DependentUpon>rasp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subj.Designer.cs">
+      <DependentUpon>subj.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="addForm.resx">
       <DependentUpon>addForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +125,18 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="group.resx">
+      <DependentUpon>group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pers.resx">
+      <DependentUpon>pers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -98,6 +146,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="rasp.resx">
+      <DependentUpon>rasp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subj.resx">
+      <DependentUpon>subj.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -28,3 +28,9 @@ F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.pdb
 F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.addForm.resources
 F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.delForm.resources
 F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.edForm.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.Form2.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.pers.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.rasp.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.subj.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.group.resources
+F:\desktop\удаленка\csind2\Csind2\obj\Debug\Csind2.Form3.resources

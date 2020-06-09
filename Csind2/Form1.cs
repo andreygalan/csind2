@@ -40,7 +40,7 @@ namespace Csind2
 
 
             
-                MySqlCommand command = new MySqlCommand("SELECT q.`id`, x.`numgr` , y.`last names` , y.`first name` , y.`middle names` , z.`subj` , w.`day` FROM `schedule` q, `group` x, `teacher` y, `subject` z, `week` w WHERE x.`idgr` = q.`idrg` AND y.`idteach` = q.`idteach` AND z.`idsubject` = q.`idsubject` AND w.`iday` = q.`iday`", db.getConnection());
+                MySqlCommand command = new MySqlCommand("SELECT q.`id`,p.`fio` ,x.`numgr` ,z.`subj` , w.`day`,q.`numpar` FROM `schedule` q, `group` x, `teacher` y, `subject` z, `week` w,`person` p WHERE x.`idgr` = q.`idrg` AND y.`idteach` = q.`idteach` AND z.`idsubject` = q.`idsubject` AND w.`iday` = q.`iday`AND y.`idperson`=p.`idperson`", db.getConnection());
                  db.openConnection();
                 MySqlDataReader reader = command.ExecuteReader();
 
@@ -49,10 +49,11 @@ namespace Csind2
                     dataGridView1.Rows.Add();
                     dataGridView1[0, dataGridView1.Rows.Count - 1].Value = reader[0].ToString();
                     dataGridView1[1, dataGridView1.Rows.Count - 1].Value = reader[1].ToString();
-                    dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[2].ToString() + " " + reader[3].ToString() + " " + reader[4].ToString();
-                    dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[5].ToString();
-                    dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[6].ToString();
-                }
+                    dataGridView1[2, dataGridView1.Rows.Count - 1].Value = reader[2].ToString();
+                    dataGridView1[3, dataGridView1.Rows.Count - 1].Value = reader[3].ToString();
+                    dataGridView1[4, dataGridView1.Rows.Count - 1].Value = reader[4].ToString();
+                dataGridView1[5, dataGridView1.Rows.Count - 1].Value = reader[5].ToString();
+            }
                 reader.Close();            
                 db.closeConnection();
             
@@ -78,8 +79,49 @@ namespace Csind2
 
         private void преподавательToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addForm newForm = new addForm();
-            newForm.Show();
+            Form3 newform = new Form3();
+            newform.Show();
+        }
+
+        private void студентToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 newform = new Form2();
+            newform.StartPosition = FormStartPosition.Manual;
+            newform.Location = this.Location;
+            newform.Show();
+        }
+
+        private void человекToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pers newform = new pers();
+            newform.StartPosition = FormStartPosition.Manual;
+            newform.Location = this.Location;
+            newform.Show();
+        }
+
+        private void расписаниеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            rasp newform = new rasp();
+            newform.StartPosition = FormStartPosition.Manual;
+            newform.Location = this.Location;
+            newform.Show();
+        }
+
+        private void дисциплинаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            subj newform = new subj();
+            newform.StartPosition = FormStartPosition.Manual;
+            newform.Location = this.Location;
+            newform.Show();
+        }
+
+        private void группаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            group newform = new group();
+            newform.StartPosition = FormStartPosition.Manual;
+            newform.Location = this.Location;
+            newform.Show();
+
         }
     }
 }

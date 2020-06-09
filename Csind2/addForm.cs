@@ -25,8 +25,7 @@ namespace Csind2
             {
 
                 string lname = textBox1.Text;
-                string fname = textBox2.Text;
-                string mname = textBox3.Text;
+              
                 string dep = textBox4.Text;
                 string pos = textBox5.Text;
                 DB db = new DB();
@@ -34,9 +33,7 @@ namespace Csind2
                 DataTable table = new DataTable();
                 MySqlDataAdapter adapter = new MySqlDataAdapter();
                 MySqlCommand command = new MySqlCommand("INSERT INTO `ind2`.`teacher` (`last names`, `first name`, `middle names`, `department`, `position`) VALUES(@ln, @fn, @mn, @dp, @pos)", db.getConnection());
-                command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = lname;
-                command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = fname;
-                command.Parameters.Add("@mn", MySqlDbType.VarChar).Value = mname;
+                command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = lname;            
                 command.Parameters.Add("@dp", MySqlDbType.Text).Value = dep;
                 command.Parameters.Add("@pos", MySqlDbType.Text).Value = pos;
 
@@ -116,7 +113,6 @@ namespace Csind2
             while (reader.Read())
             {
                 comboBox4.Items.Add(reader[1]);
-
             }
             db.closeConnection();
 
@@ -155,7 +151,6 @@ namespace Csind2
         private void button4_Click(object sender, EventArgs e)
         {
             string gr = comboBox1.Text;
-            string id;
             string tch = comboBox2.Text;
             string day = comboBox4.Text;
             string subj = comboBox3.Text;
