@@ -50,19 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="addForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="addForm.Designer.cs">
-      <DependentUpon>addForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="DB.cs" />
-    <Compile Include="delForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="delForm.Designer.cs">
-      <DependentUpon>delForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="edForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,12 +101,6 @@
     <Compile Include="subj.Designer.cs">
       <DependentUpon>subj.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="addForm.resx">
-      <DependentUpon>addForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delForm.resx">
-      <DependentUpon>delForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="edForm.resx">
       <DependentUpon>edForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idstudent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idperson = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idgroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,9 +91,9 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
+            this.idstudent,
+            this.idperson,
+            this.idgroup});
             this.dataGridView1.Location = new System.Drawing.Point(3, 1);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -102,26 +102,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(403, 243);
             this.dataGridView1.TabIndex = 5;
             // 
-            // Column1
+            // idstudent
             // 
-            this.Column1.HeaderText = "Column1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 50;
+            this.idstudent.HeaderText = "id";
+            this.idstudent.Name = "idstudent";
+            this.idstudent.ReadOnly = true;
+            this.idstudent.Width = 50;
             // 
-            // Column2
+            // idperson
             // 
-            this.Column2.HeaderText = "Column2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 250;
+            this.idperson.HeaderText = "ФИО";
+            this.idperson.Name = "idperson";
+            this.idperson.ReadOnly = true;
+            this.idperson.Width = 250;
             // 
-            // Column3
+            // idgroup
             // 
-            this.Column3.HeaderText = "Column3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 50;
+            this.idgroup.HeaderText = "Группа";
+            this.idgroup.Name = "idgroup";
+            this.idgroup.ReadOnly = true;
+            this.idgroup.Width = 50;
             // 
             // Form2
             // 
@@ -151,8 +151,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idstudent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idperson;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idgroup;
     }
 }

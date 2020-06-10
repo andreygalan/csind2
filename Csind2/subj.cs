@@ -52,11 +52,12 @@ namespace Csind2
             {
                 dataGridView1.Rows.Add(reader[0].ToString(), reader[1].ToString());
             }
-            db.closeConnection();
+            db.closeConnection();            
         }
         private void subj_Load(object sender, EventArgs e)
         {
             refresh();
         }
+       
     }
 }
