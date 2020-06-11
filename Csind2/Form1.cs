@@ -17,9 +17,11 @@ namespace Csind2
         {
             
             InitializeComponent();
-            refresh();
+            try
+            {
+                refresh();
 
-
+            }catch { MessageBox.Show("Ошибка в работе с бд"); }
 
         }
 
@@ -93,15 +95,15 @@ namespace Csind2
         {
             this.Height += 100;
             button1.Hide();
-            refreshzapros();
-            label1.Show();
-            label2.Show();
-            comboBox1.Show();
-            comboBox2.Show();
-            button3.Show();
-            button2.Show();
+            
+            groupBox2.Show();
+            groupBox1.Show();
             button4.Show();
-
+            try
+            {
+                refreshzapros();
+            }
+            catch { MessageBox.Show("Ошибка в работе с бд"); }
         }
         private void refreshrasp()
         {
@@ -293,15 +295,18 @@ namespace Csind2
         {
             this.Height -= 100;
             button1.Show();
-            refreshzapros();
-            label1.Hide();
-            label2.Hide();
-            comboBox1.Hide();
-            comboBox2.Hide();
-            button3.Hide();
-            button2.Hide();
+           
+
+            groupBox2.Hide();
+            groupBox1.Hide();
             button4.Hide();
-            refreshrasp();
+            try
+            {
+                refreshrasp();
+                refreshzapros();
+            }
+            catch { MessageBox.Show("Ошибка в работе с бд"); }
+
         }
     }
 }

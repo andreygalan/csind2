@@ -644,6 +644,7 @@ namespace Csind2
                 db.closeConnection();
                 refreshgr();
                 refreshrasp();
+                refreshpers();
             }
         }
     }

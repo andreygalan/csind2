@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Csind2
@@ -12,8 +13,11 @@ namespace Csind2
         MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;user=root;password=;database=ind2");
         public void openConnection()
         {
-            if (connection.State == System.Data.ConnectionState.Closed)
-                connection.Open();
+            try
+            {
+                if (connection.State == System.Data.ConnectionState.Closed)
+                    connection.Open();
+            }catch { MessageBox.Show("Нет связи с бд"); }
         }
         public void closeConnection()
         {
