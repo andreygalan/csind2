@@ -404,7 +404,7 @@ namespace Csind2
                 command.Parameters.Add("@dep", MySqlDbType.Text).Value = textBox2.Text;
                 command.Parameters.Add("@pos", MySqlDbType.Text).Value = textBox3.Text;
                 if (command.ExecuteNonQuery() == 1)
-                    MessageBox.Show("Запись создана");
+                    MessageBox.Show("Запись изменена");
                 else MessageBox.Show("error");
             }
             else MessageBox.Show("Заполните все поля");
